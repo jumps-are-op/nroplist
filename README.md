@@ -22,4 +22,4 @@
 Well, my country have recently banned porn website,
 but my friend found some porn websites that works.
 So they asked me (not really) to make a list of woking ones,
-for reasons i will not talk about because I am a good person ;-)
+for reasons i will not talk about because I am a good person :-)
