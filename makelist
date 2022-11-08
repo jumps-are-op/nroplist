@@ -13,9 +13,9 @@ or what your country count as an "adult" that can watch pornography content
 	EOF
 	while read -r link;do
 		{ if ping -c3 -W1 "$link" >/dev/null 2>&1;then
-			printf -- "- [X] [%s](%s)<br/>\n" "${link%.*}" "https://$link"
+			printf -- "- [X] [%s](%s)<br/>\n" "$link" "https://$link"
 		else
-			printf -- "- [ ] [%s](%s)<br/>\n" "${link%.*}" "https://$link"
+			printf -- "- [ ] [%s](%s)<br/>\n" "$link" "https://$link"
 		fi;} &
 	done < "${1:-websites}" | sort -k4
 	wait
