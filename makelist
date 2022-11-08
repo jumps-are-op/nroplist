@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# Made by jumps-are-op
+# This software is under GPLv3 and comes with ABSOLUTE NO WARRANTY
+
+main(){
+	cat <<-EOF
+## WARNING THIS CONTENT IS +18 AND IS MADE FOR EDUCATIONAL PURPOSES ONLY
+### By reading this you are agreeing that your age is +18 \
+or what your country count as an "adult" that can watch pornography content
+
+## List of working porn website in Iraq (after the ban)
+	EOF
+	while read -r link;do
+		{ if ping -c3 -W1 "$link" >/dev/null 2>&1;then
+			printf -- "- [X] [%s](%s)<br/>\n" "${link%.*}" "https://$link"
+		else
+			printf -- "- [ ] [%s](%s)<br/>\n" "${link%.*}" "https://$link"
+		fi;} &
+	done < "${1:-websites}" | sort -k4
+	wait
+
+	cat <<-EOF
+
+## Why did i made this list?
+Well, my country have recently banned porn website,
+but my friend found some porn websites that works.
+So they asked me (not really) to make a list of woking ones,
+for reasons i will not talk about because I am a good person ;-)
+	EOF
+}
+
+main "$@"
+
